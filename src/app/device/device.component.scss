@@ -14,9 +14,9 @@
     color: var(--primary);
 
     &__content {
-      padding: 10px;
       border-bottom: 2px solid green;
-    }
+      padding: 10px;
+     }
   }
 
   &__row {
@@ -31,7 +31,8 @@
   }
 
   &__content {
-    padding: 10px;
     border-bottom: 1px solid var(--cinza-claro);
+    padding: 10px;
+    white-space: nowrap;
   }
 }

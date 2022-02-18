@@ -10,11 +10,11 @@
       <th class="table__header__content">#</th>
     </thead>
     <tbody>
-      <tr class="table__row">
-        <td class="table__content">1</td>
-        <td class="table__content">#</td>
-        <td class="table__content">#</td>
-        <td class="table__content">#</td>
+      <tr *ngFor="let device of devices" class="table__row">
+        <td class="table__content">{{device.id}}</td>
+        <td class="table__content">{{device.category}}</td>
+        <td class="table__content">{{device.color}}</td>
+        <td class="table__content">{{device.partNumber}}</td>
         <td class="table__content"><a href="#">remove</a></td>
       </tr>
     </tbody>

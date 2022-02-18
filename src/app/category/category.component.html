@@ -8,9 +8,9 @@
       <th class="table__header__content">#</th>
     </thead>
     <tbody>
-      <tr class="table__row">
-        <td class="table__content">1</td>
-        <td class="table__content">#</td>
+      <tr *ngFor="let category of categories" class="table__row">
+        <td class="table__content">{{category.id}}</td>
+        <td class="table__content">{{category.name}}</td>
         <td class="table__content"><a href="#">remove</a></td>
       </tr>
     </tbody>
