@@ -1,6 +1,6 @@
 export interface Device {
   id: number;
-  category: string;
-  color: string;
+  category: number;
+  color: String;
   partNumber: number;
 }

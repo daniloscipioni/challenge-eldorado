@@ -15,7 +15,10 @@
         <td class="table__content">{{device.category}}</td>
         <td class="table__content">{{device.color}}</td>
         <td class="table__content">{{device.partNumber}}</td>
-        <td class="table__content"><a href="#">remove</a></td>
+        <td class="table__content">
+
+          <button class="btn" (click)="removeDevice(device.id)">Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -11,7 +11,9 @@
       <tr *ngFor="let category of categories" class="table__row">
         <td class="table__content">{{category.id}}</td>
         <td class="table__content">{{category.name}}</td>
-        <td class="table__content"><a href="#">remove</a></td>
+        <td class="table__content">
+          <button class="btn" (click)="removeCategory(category.id)">Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>

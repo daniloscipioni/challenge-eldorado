@@ -22,4 +22,8 @@ export class DeviceService {
   addDevice(device: Device): Observable<Device> {
     return this.httpClient.post<Device>(this.url, device);
   }
+
+  removeDevice(id: number): Observable<Device>{
+    return this.httpClient.delete<Device>(this.url + "/" + id);
+  }
 }
