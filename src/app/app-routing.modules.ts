@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', redirectTo: 'devices', pathMatch: 'full' },
   { path: 'devices', component: DeviceComponent },
   { path: 'categories', component: CategoryComponent },
 ];
