@@ -1,21 +1,20 @@
 {
   "categories": [
     {
+      "id": 1,
+      "name": "Periféricos"
+    },
+    {
       "id": 3,
-      "name": "teste cat 3"
-    },
-    {
-      "id": 5,
-      "name": "TEST 4"
-    },
-    {
-      "id": 6,
-      "name": "234234234234234234234234"
-    },
-    {
-      "id": 9,
-      "name": "12313132132131311321321fgsdfgdsfgsdlkfjgçs dkfjçlskdjf gksjdçlfkjgsdfgsdfgsdfg"
+      "name": "2132323123"
     }
   ],
-  "devices": []
+  "devices": [
+    {
+      "id": 1,
+      "category": "1",
+      "color": "Preto",
+      "partNumber": "1123-6658"
+    }
+  ]
 }
