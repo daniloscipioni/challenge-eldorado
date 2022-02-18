@@ -1,0 +1,41 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Category 1"
+    },
+    {
+      "id": 2,
+      "name": "Category 2"
+    },
+    {
+      "id": 3,
+      "name": "Category 3"
+    },
+    {
+      "id": 4,
+      "name": "Category 4"
+    }
+  ],
+  "devices": [
+    {
+      "id": 1,
+      "category": "Category 1",
+      "color":"blue",
+      "partNumber":123456
+    },
+    {
+      "id": 2,
+      "category": "Category 1",
+      "color":"red",
+      "partNumber":99985
+    },
+    {
+      "id": 3,
+      "category": "Category 3",
+      "color":"pink",
+      "partNumber":12000
+    }
+  ]
+
+}
