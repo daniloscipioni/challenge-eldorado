@@ -15,27 +15,34 @@
     {
       "id": 4,
       "name": "Category 4"
+    },
+    {
+      "id": 5,
+      "name": "teste"
+    },
+    {
+      "id": 6,
+      "name": "teste 2 "
     }
   ],
   "devices": [
     {
       "id": 1,
       "category": "Category 1",
-      "color":"blue",
-      "partNumber":123456
+      "color": "blue",
+      "partNumber": 123456
     },
     {
       "id": 2,
       "category": "Category 1",
-      "color":"red",
-      "partNumber":99985
+      "color": "red",
+      "partNumber": 99985
     },
     {
       "id": 3,
       "category": "Category 3",
-      "color":"pink",
-      "partNumber":12000
+      "color": "pink",
+      "partNumber": 12000
     }
   ]
-
 }
