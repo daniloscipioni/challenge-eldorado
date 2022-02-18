@@ -2,27 +2,30 @@
   <form class="form">
     <h2 class="form__title">New Device</h2>
 
-
     <div class="form-field">
       <label class="form-field__label" for="category">Category</label>
-      <!-- <input class="form-field__input" id="category" type="text" name="category"> -->
       <select name="category" id="category" class="form-field__input">
-        <option value="1">1</option>
-        <option value="2">2</option>
+        <option *ngFor="let category of categories" value="{{ category.id }}">
+          {{ category.name }}
+        </option>
       </select>
     </div>
     <div class="form-field">
       <label class="form-field__label" for="color">Color</label>
-      <input class="form-field__input" id="color" type="text" name="color">
+      <input class="form-field__input" id="color" type="text" name="color" />
     </div>
     <div class="form-field">
       <label class="form-field__label" for="partNumber">Part Number</label>
-      <input class="form-field__input" id="partNumber" type="text" name="partNumber">
+      <input
+        class="form-field__input"
+        id="partNumber"
+        type="text"
+        name="partNumber"
+      />
     </div>
 
     <div class="btn-wrapper">
       <button class="btn" type="submit">Save Device</button>
-
     </div>
   </form>
 </section>
