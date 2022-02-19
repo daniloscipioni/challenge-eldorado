@@ -1,6 +1,8 @@
 <section class="container">
   <h2 class="title">Devices</h2>
-
+  <div class="middle-content">
+    <button class="btn-primary" routerLink="/new-device">New Device</button>
+  </div>
   <table class="table">
     <thead class="table__header">
       <th class="table__header__content">ID</th>
@@ -9,21 +11,19 @@
       <th class="table__header__content">PartNumber</th>
       <th class="table__header__content">#</th>
     </thead>
-    <tbody>
+    <tbody *ngIf="devices.length > 0; else emptyList">
       <tr *ngFor="let device of devices" class="table__row">
-        <td class="table__content">{{device.id}}</td>
-        <td class="table__content">{{device.category}}</td>
-        <td class="table__content">{{device.color}}</td>
-        <td class="table__content">{{device.partNumber}}</td>
+        <td class="table__content">{{ device.id }}</td>
+        <td class="table__content">{{ device.category }}</td>
+        <td class="table__content">{{ device.color }}</td>
+        <td class="table__content">{{ device.partNumber }}</td>
         <td class="table__content">
-
           <button class="btn" (click)="removeDevice(device.id)">Delete</button>
         </td>
       </tr>
     </tbody>
   </table>
-  <span>
-    <a routerLink="/new-device">New Device</a>
-
-  </span>
+  <ng-template #emptyList>
+  <p>No device registered yet</p>
+</ng-template>
 </section>

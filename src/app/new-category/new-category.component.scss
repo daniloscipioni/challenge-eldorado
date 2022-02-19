@@ -1,4 +1,5 @@
 .form {
+  width: 300px;
   background-color: white;
   padding: 16px;
   border-radius: 4px;
@@ -7,6 +8,9 @@
     text-transform: capitalize;
     color: var(--primary);
   }
+}
+.text-error{
+  color: red;
 }
 
 .form-field {

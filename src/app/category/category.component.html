@@ -1,23 +1,28 @@
 <section class="container">
   <h2 class="title">Categories</h2>
 
+  <div class="middle-content">
+    <button class="btn-primary" routerLink="/new-category">New Category</button>
+  </div>
   <table class="table">
     <thead class="table__header">
       <th class="table__header__content">ID</th>
       <th class="table__header__content">Category</th>
       <th class="table__header__content">#</th>
     </thead>
-    <tbody>
+    <tbody *ngIf="categories.length > 0; else emptyList">
       <tr *ngFor="let category of categories" class="table__row">
-        <td class="table__content">{{category.id}}</td>
-        <td class="table__content">{{category.name}}</td>
+        <td class="table__content">{{ category.id }}</td>
+        <td class="table__content">{{ category.name }}</td>
         <td class="table__content">
-          <button class="btn" (click)="removeCategory(category.id)">Delete</button>
+          <button class="btn" (click)="removeCategory(category.id)">
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
-  <span>
-    <a routerLink="/new-category">New Category</a>
-  </span>
+  <ng-template #emptyList>
+    <span>No categories registered yet</span>
+  </ng-template>
 </section>
