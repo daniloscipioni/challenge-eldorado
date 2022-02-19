@@ -1,10 +1,11 @@
 <section class="container">
-  <form class="form" (ngSubmit)="registerDevice()">
+  <form class="form" [formGroup]="formDevice" (ngSubmit)="registerDevice()">
     <h2 class="form__title">New Device</h2>
 
     <div class="form-field">
       <label class="form-field__label" for="category">Category</label>
-      <select name="category" id="category" class="form-field__input" [(ngModel)]="category">
+      <select formControlName="category" class="form-field__input" [(ngModel)]="category">
+        <option value="0">Select category</option>
         <option *ngFor="let category of categories" value="{{ category.id }}">
           {{ category.name }}
         </option>
@@ -12,19 +13,20 @@
     </div>
     <div class="form-field">
       <label class="form-field__label" for="color">Color</label>
-      <input class="form-field__input" id="color" type="text" name="color" [(ngModel)]="color" />
+      <input class="form-field__input" type="text" formControlName="color" [(ngModel)]="color" maxlength="16" />
+      <small class="text-error" *ngIf="formDevice.controls['color'].errors">Color is required and Max value is 16 characters</small>
     </div>
+
     <div class="form-field">
       <label class="form-field__label" for="partNumber">Part Number</label>
       <input
         class="form-field__input"
-        id="partNumber"
-        type="text"
-        name="partNumber"
+        formControlName="partNumber"
+        type="number"
         [(ngModel)]="partNumber"
       />
     </div>
-
+    <small class="text-error" *ngIf="formDevice.controls['partNumber'].errors">Only accept numbers</small>
     <div class="btn-wrapper">
       <button class="btn" type="submit">Save Device</button>
     </div>

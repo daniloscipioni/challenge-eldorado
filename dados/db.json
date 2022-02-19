@@ -2,19 +2,37 @@
   "categories": [
     {
       "id": 1,
-      "name": "Periféricos"
+      "name": "Teste Cat"
     },
     {
-      "id": 3,
-      "name": "2132323123"
+      "id": 2,
+      "name": "sdasasdasd"
     }
   ],
   "devices": [
     {
       "id": 1,
       "category": "1",
-      "color": "Preto",
-      "partNumber": "1123-6658"
+      "color": "preto",
+      "partNumber": "123458"
+    },
+    {
+      "id": 2,
+      "category": "2",
+      "color": "branco",
+      "partNumber": "11123"
+    },
+    {
+      "id": 3,
+      "category": 0,
+      "color": "sfasdf",
+      "partNumber": 0
+    },
+    {
+      "id": 4,
+      "category": 0,
+      "color": "asdasdasdasdasda",
+      "partNumber": 111231
     }
   ]
 }

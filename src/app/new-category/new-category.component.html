@@ -1,16 +1,23 @@
 <section class="container">
-  <form class="form" (ngSubmit)="registerCategory()">
+  <form class="form" [formGroup]="formCategory" (ngSubmit)="registerCategory()">
     <h2 class="form__title">New Category</h2>
-
 
     <div class="form-field">
       <label class="form-field__label" for="category">Category</label>
-      <input class="form-field__input" id="category" type="text" name="category" maxlength="128" required="required" pattern="[A-Za-z0-9]" [(ngModel)]="categoryName">
+      <input
+        class="form-field__input"
+        formControlName="category"
+        type="text"
+        [(ngModel)]="categoryName"
+      />
+
+    </div>
+    <div *ngIf="!formCategory.valid">
+      <small class="text-error">  Category name can not be empty or greater than 128 characters </small>
     </div>
 
     <div class="btn-wrapper">
       <button class="btn" type="submit">Save Category</button>
-
     </div>
   </form>
 </section>
