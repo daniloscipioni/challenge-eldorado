@@ -9,6 +9,7 @@ import { CategoryComponent } from './category/category.component';
 import { NewCategoryComponent } from './new-category/new-category.component';
 import { NewDeviceComponent } from './new-device/new-device.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
