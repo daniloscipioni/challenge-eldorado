@@ -28,6 +28,7 @@ export class NewDeviceComponent implements OnInit {
     private serviceDevice: DeviceService,
     private router: Router
   ) {
+    // Field Validators
     this.formDevice = this.formBuilder.group({
       category: ['', Validators.compose([Validators.required])],
       color: ['', Validators.compose([Validators.required, Validators.maxLength(16)])],
@@ -38,11 +39,12 @@ export class NewDeviceComponent implements OnInit {
     });
   }
 
+
+  /**
+   * @return Register device
+   */
   registerDevice() {
-
-    console.log('Dispositivo enviado');
-    if (this.formDevice.valid) {
-
+  if (this.formDevice.valid) {
 
     const deviceValue: Device = {
       id: this.id,
@@ -59,9 +61,6 @@ export class NewDeviceComponent implements OnInit {
       },
       (error) => console.error(error)
     );
-  }else
-  {
-    console.log(this.formDevice.controls["color"].errors?['maxlenght']:null);
   }
 }
   ngOnInit(): void {

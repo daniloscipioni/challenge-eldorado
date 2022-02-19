@@ -12,8 +12,12 @@ export class CategoryComponent implements OnInit {
 
   constructor(private service: CategoryService, private router: Router) {}
 
+  /**
+   *
+   * @param id id categoy
+   * @return remove category
+   */
   removeCategory(id: number) {
-    console.log('Categoria removida');
     if (confirm('Delete category?')) {
       this.service.removeCategory(id).subscribe(
         (result) => {

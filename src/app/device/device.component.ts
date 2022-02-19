@@ -13,8 +13,12 @@ export class DeviceComponent implements OnInit {
 
   constructor(private service: DeviceService, private router: Router) {}
 
+  /**
+   *
+   * @param id id device
+   * @return remove device
+   */
   removeDevice(id: number) {
-    console.log('Device removido');
     if (confirm('Delete device?')) {
       this.service.removeDevice(id).subscribe(
         (result) => {

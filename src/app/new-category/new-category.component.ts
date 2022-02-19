@@ -21,11 +21,18 @@ export class NewCategoryComponent implements OnInit {
     private service: CategoryService,
     private router: Router
   ) {
+    // Field Validators
     this.formCategory = this.formBuilder.group({
-      category: ['', Validators.compose([Validators.required, Validators.maxLength(128)])],
+      category: [
+        '',
+        Validators.compose([Validators.required, Validators.maxLength(128)]),
+      ],
     });
   }
 
+  /**
+   * @Return Register category
+   */
   registerCategory() {
     if (this.formCategory.valid) {
       const categoryValue: Category = {
@@ -35,7 +42,6 @@ export class NewCategoryComponent implements OnInit {
 
       this.service.addCategory(categoryValue).subscribe(
         (result) => {
-          console.log(result);
           // Retorna para a lista de categorias
           this.router.navigateByUrl('categories');
         },
