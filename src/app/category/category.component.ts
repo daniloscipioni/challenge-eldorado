@@ -1,5 +1,5 @@
 import { CategoryService } from '../services/category.service';
-import { Category } from './../models/category.model';
+import { Category } from '../models/category.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
@@ -19,15 +19,20 @@ export class CategoryComponent implements OnInit {
    */
   removeCategory(id: number) {
     if (confirm('Delete category?')) {
-      this.service.removeCategory(id).subscribe(
-        (result) => {
-          // Retorna para a lista de categorias
-          this.router.navigateByUrl('categories');
-          // Refresh no componente
-          this.ngOnInit();
-        },
-        (error) => console.error(error)
-      );
+      try {
+        this.service.removeCategory(id).subscribe(
+          (result) => {
+            // Retorna para a lista de categorias
+            this.router.navigateByUrl('categories');
+            // Refresh no componente
+            this.ngOnInit();
+          },
+          (error) => console.error(error)
+        );
+      } catch (error) {
+        alert (error);
+      }
+
     }
   }
 

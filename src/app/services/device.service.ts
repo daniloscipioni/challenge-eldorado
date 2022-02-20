@@ -1,5 +1,5 @@
 import { Category } from './../models/category.model';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Device } from './../models/device.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -9,21 +9,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DeviceService {
   private listDevice: Device[] = [];
-  private url = 'http://localhost:3000/devices';
+  private url = 'http://localhost:3000/api';
 
   constructor(private httpClient: HttpClient) {
     this.listDevice = [];
   }
 
   listDevices(): Observable<Device[]> {
-    return this.httpClient.get<Device[]>(this.url);
+    return this.httpClient.get<Device[]>(`${this.url}/devices`)
+    .pipe(map((result:Category|any) => result.data));
   }
 
   addDevice(device: Device): Observable<Device> {
-    return this.httpClient.post<Device>(this.url, device);
+    return this.httpClient.post<Device>(`${this.url}/add-device`, device);
   }
 
   removeDevice(id: number): Observable<Device>{
-    return this.httpClient.delete<Device>(this.url + "/" + id);
+    return this.httpClient.delete<Device>(`${this.url}/remove-device` + "/" + id);
   }
 }

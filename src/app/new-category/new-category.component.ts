@@ -36,7 +36,7 @@ export class NewCategoryComponent implements OnInit {
   registerCategory() {
     if (this.formCategory.valid) {
       const categoryValue: Category = {
-        id: this.id,
+        id : this.id,
         name: this.categoryName,
       };
 
