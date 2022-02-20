@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DeviceService {
   private listDevice: Device[] = [];
-  private url = 'http://localhost:3000/api';
+  private url = 'https://challenge-eldorado-backend.herokuapp.com/api';
 
   constructor(private httpClient: HttpClient) {
     this.listDevice = [];

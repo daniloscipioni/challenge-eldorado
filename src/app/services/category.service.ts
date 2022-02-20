@@ -8,7 +8,7 @@ import { Category } from '../models/category.model';
 })
 export class CategoryService {
   private listCategory: Category[] = [];
-  private url = 'http://localhost:3000/api';
+  private url = 'https://challenge-eldorado-backend.herokuapp.com/api';
 
   constructor(private httpClient: HttpClient) {
     this.listCategory = [];
