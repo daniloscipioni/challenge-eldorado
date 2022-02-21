@@ -16,7 +16,7 @@ export class NewDeviceComponent implements OnInit {
   formDevice: FormGroup;
 
   id: number = 0;
-  category: number = 0;
+  category!: number;
   color: String = '';
   partNumber: number = 0;
 
@@ -44,6 +44,7 @@ export class NewDeviceComponent implements OnInit {
    * @return Register device
    */
   registerDevice() {
+    console.log(this.category);
   if (this.formDevice.valid) {
 
     const deviceValue: Device = {

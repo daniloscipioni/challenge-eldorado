@@ -5,11 +5,12 @@
     <div class="form-field">
       <label class="form-field__label" for="category">Category</label>
       <select formControlName="category" class="form-field__input" [(ngModel)]="category">
-        <option value="0">Select category</option>
-        <option *ngFor="let category of categories" value="{{ category.id }}">
+        <option value="">Select category</option>
+        <option *ngFor="let category of categories" [ngValue]="category.id">
           {{ category.name }}
         </option>
       </select>
+      <small class="text-error" *ngIf="formDevice.controls['category'].errors">Category is required</small>
     </div>
     <div class="form-field">
       <label class="form-field__label" for="color">Color</label>
